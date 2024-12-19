@@ -1,0 +1,5 @@
+CREATE TABLE purchase_logs (
+  id SERIAL PRIMARY KEY,
+  client_ip TEXT NOT NULL,
+  purchase_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
