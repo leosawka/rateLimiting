@@ -1,4 +1,99 @@
 # Rate Limiting API - Bob's Corn 🌽
+Welcome to the **Rate Limiting API** project, designed to simulate a system that limits corn purchases to one per minute per client. This project includes a **Node.js** backend with **PostgreSQL** and a frontend developed in **React** using **Vite**.  
+
+---
+
+## 📖 Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Instalation](#instalation)
+- [Usage](#usage)
+- [Tests](#tests)
+- [Author](#author)
+
+---
+
+### Description  
+This project implements a **Rate Limiting** system allowing users to make purchases limited to one transaction per minute. The system uses a **PostgreSQL** database to log transactions and a middleware to apply the rate-limiting logic.
+
+---
+
+## ✨ Features  
+- Custom middleware for rate limiting.
+- Relational database with PostgreSQL.
+- Modern frontend using React and Vite.
+- Automated testing with Jest and Supertest.
+
+---
+
+## 🛠️ Requirements
+Before starting, make sure you have the following installed:  
+
+- **Node.js** (v16 or higher)
+- **npm** (v8 or higher)
+- **PostgreSQL***
+- **Docker** (optional, for containers)
+
+---
+
+## 🚀 Installation  
+### Backend
+1. Clone this repository (not available at the moment):  
+```
+git clone https://github.com/not_available/RateLimiting.git
+cd RateLimiting/backend
+```  
+2. Install dependencies: ```npm install```  
+3. Set up the environment variables in a ```.env``` file:
+```
+POSTGRES_USER=<user/>
+POSTGRES_PASSWORD=<password/>
+POSTGRES_DB=postgres
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+PORT=3001
+```  
+4. Create the table in PostgreSQL:  
+```
+CREATE TABLE purchase_logs (
+  id SERIAL PRIMARY KEY,
+  client_ip TEXT NOT NULL,
+  purchase_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```  
+5. Start the server: ```node server.js```  
+
+### Frontend
+1. Navigate to the ```frontend``` folder: ```cd ../frontend```  
+2. Install dependencies: ```npm install```  
+3. Start development server: ```npm run dev```
+
+---
+
+## 🧪 Tests  
+- Run automated backend tests:  
+```
+cd backend
+npm test
+```
+
+---
+
+## Usage  
+- Open the frontend in your browser at ```http://localhost:5173```.
+- Click on the "Buy Corn" button to make a purchase.
+- Observe the messages indicating whether the purchase was successful or blocked by the rate-limiting system.
+
+---
+
+## 😄 Author  
+- Jairo Leonardo Olivera Sawka.
+- At the request of: Base Labs (Emi Hernandez)
+
+---
+
+# Rate Limiting API - Bob's Corn 🌽
 
 Bienvenido al proyecto **Rate Limiting API** diseñado para simular un sistema que limita la cantidad de compras de maíz a una por minuto por cliente. Este proyecto incluye un backend en **Node.js** con **PostgreSQL** y un frontend desarrollado en **React** utilizando **Vite**.
 
@@ -93,98 +188,3 @@ npm test
 ## 😄 Autor  
 - Jairo Leonardo Olivera Sawka.
 - Por pedido de: Base Labs (Emi Hernandez)
-
----
-
-# Rate Limiting API - Bob's Corn 🌽
-Welcome to the **Rate Limiting API** project, designed to simulate a system that limits corn purchases to one per minute per client. This project includes a **Node.js** backend with **PostgreSQL** and a frontend developed in **React** using **Vite**.  
-
----
-
-## 📖 Table of Contents
-- [Description](#description)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Instalation](#instalation)
-- [Usage](#usage)
-- [Tests](#tests)
-- [Author](#author)
-
----
-
-### Description  
-This project implements a **Rate Limiting** system allowing users to make purchases limited to one transaction per minute. The system uses a **PostgreSQL** database to log transactions and a middleware to apply the rate-limiting logic.
-
----
-
-## ✨ Features  
-- Custom middleware for rate limiting.
-- Relational database with PostgreSQL.
-- Modern frontend using React and Vite.
-- Automated testing with Jest and Supertest.
-
----
-
-## 🛠️ Requirements
-Before starting, make sure you have the following installed:  
-
-- **Node.js** (v16 or higher)
-- **npm** (v8 or higher)
-- **PostgreSQL***
-- **Docker** (optional, for containers)
-
----
-
-## 🚀 Installation  
-### Backend
-1. Clone this repository (not available at the moment):  
-```
-git clone https://github.com/not_available/RateLimiting.git
-cd RateLimiting/backend
-```  
-2. Install dependencies: ```npm install```  
-3. Set up the environment variables in a ```.env``` file:
-```
-POSTGRES_USER=<user/>
-POSTGRES_PASSWORD=<password/>
-POSTGRES_DB=postgres
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-PORT=3001
-```  
-4. Create the table in PostgreSQL:  
-```
-CREATE TABLE purchase_logs (
-  id SERIAL PRIMARY KEY,
-  client_ip TEXT NOT NULL,
-  purchase_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```  
-5. Start the server: ```node server.js```  
-
-### Frontend
-1. Navigate to the ```frontend``` folder: ```cd ../frontend```  
-2. Install dependencies: ```npm install```  
-3. Start development server: ```npm run dev```
-
----
-
-## 🧪 Tests  
-- Run automated backend tests:  
-```
-cd backend
-npm test
-```
-
----
-
-## Usage  
-- Open the frontend in your browser at ```http://localhost:5173```.
-- Click on the "Buy Corn" button to make a purchase.
-- Observe the messages indicating whether the purchase was successful or blocked by the rate-limiting system.
-
----
-
-## 😄 Author  
-- Jairo Leonardo Olivera Sawka.
-- At the request of: Base Labs (Emi Hernandez)
